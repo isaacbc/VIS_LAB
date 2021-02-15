@@ -1,0 +1,15 @@
+<div class="content" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">
+    <h1>Publications</h1>
+    <div *ngIf="publications.length" fxFlex="1 1 auto" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="70px" fxFlex="100">
+        <app-project-filters class="project-filters-container" [tags]="getListOfTags(publications)"
+            (selectedTag)="onTagSelected($event)"></app-project-filters>
+        <app-publication-item *ngFor="let publication of pageOfPublications" [publication]="publication"></app-publication-item>
+        <jw-pagination [items]="publications" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+</div>
+
+
+<ng-template #loading>
+    <div>Loading ...</div>
+</ng-template>

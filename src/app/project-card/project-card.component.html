@@ -1,0 +1,17 @@
+<mat-card class="project-card">
+    <mat-card-header>
+        <mat-card-title>{{project.title}}</mat-card-title>
+        <mat-card-subtitle>{{project.authors}} ({{project.date | date}})</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/photos/{{project.images[0]}}" alt="Photo of the project">
+    <mat-card-content>
+        <p>{{project.description}}</p>
+        <mat-chip-list>
+            <mat-chip *ngFor="let tag of project.tags">{{tag}}</mat-chip>
+        </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <button [routerLink]="['/project-details/', project.id]" mat-button>Details</button>
+        <a mat-button color="primary" href="{{project.url}}" target="_blank">Link</a>
+    </mat-card-actions>
+</mat-card>

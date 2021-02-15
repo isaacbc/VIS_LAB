@@ -1,0 +1,17 @@
+.content-card {
+    margin: 10px;
+    background-color: #f5f5f5;
+    margin-top: 24%;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (max-width: 750px) {
+  .content-card {
+    margin-top: 50%;
+  }
+}
+
+.footer{
+    max-width: 100%;
+}
+

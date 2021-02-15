@@ -1,0 +1,25 @@
+<div class="content" fxLayout="column wrap" fxLayoutAlign="center center" fxFlex="100">
+    <h1>Members</h1>
+    <div *ngIf="members$ | async as members; else loading" >
+        <h2> Professors </h2>
+        <div fxLayout="row wrap">
+            <app-member-item *ngFor="let member of listMembersFromCategory(members, 'degree', 'Professor')"
+                [member]="member"></app-member-item>
+        </div>
+        <h2> Students </h2>
+        <div fxLayout="row wrap">
+            <app-member-item *ngFor="let member of listCurrentStudents(members)" [showDegree]="true" [member]="member">
+            </app-member-item>
+        </div>
+        <h2> Former Students </h2>
+        <div fxLayout="row wrap">
+            <app-member-item *ngFor="let member of listFormerStudents(members)" [member]="member">
+            </app-member-item>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #loading>
+    <div>Loading ...</div>
+</ng-template>

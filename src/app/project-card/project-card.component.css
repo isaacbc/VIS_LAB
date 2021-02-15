@@ -1,0 +1,12 @@
+.project-card {
+  min-width: 400px;
+}
+
+.project-card:not(.highlight-card):hover {
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+img {
+  object-fit: cover;
+  max-height: 400px;
+}

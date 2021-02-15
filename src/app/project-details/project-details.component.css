@@ -1,0 +1,26 @@
+img {
+  width: 100%;
+}
+
+.project-content {
+    margin: 5%;
+}
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+ min-width: 0!important;
+ padding: 3px!important;
+ margin: 3px!important;
+}
+
+mat-tab-group {
+  max-width: 100%;
+}
+
+.link-button {
+  float: right;
+}
+
+.back-button {
+  position: absolute;
+  bottom:   0;
+  margin-bottom: 10px;
+}

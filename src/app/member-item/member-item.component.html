@@ -1,0 +1,19 @@
+<mat-card>
+    <div class="member-info" fxFlex>
+        <mat-card-header fxFlex>
+            <mat-card-title  >
+                <a *ngIf="!member.url">{{member.name}}</a>
+                <a *ngIf="member.url" href="{{member.url}}" target="_blank" >
+                    {{member.name}}
+                </a>
+            </mat-card-title>
+            <mat-card-subtitle *ngIf="showDegree && member.degree">
+                {{member.degree}}
+                <a *ngIf="member.advisor">({{member.advisor}})</a>
+            </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="member.graduationDate">
+                {{member.graduationDate}}
+            </mat-card-subtitle>
+        </mat-card-header>
+    </div>
+</mat-card>

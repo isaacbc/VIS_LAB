@@ -1,0 +1,63 @@
+<div class="content" fxLayout="column wrap" fxLayoutAlign="center center" fxFlex="100">
+    <h1>Visualization, Interaction and Simulation Lab</h1>
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.lt-md="column">
+        <mat-card fxLayout="column" fxFlex="60" fxFlex.lt-md="100">
+            <mat-card-header>
+                <!--<mat-card-title style="font-size: 2.25rem;line-height: 2rem;">
+                   Our Lab
+                </mat-card-title>-->
+            </mat-card-header>
+            <mat-card-content style="margin-left: 16px;" class="larger-text">
+                <p>The Visualization, Interaction, and Simulation Laboratory (VISLab) is part of the Computer Graphics,
+                    Image Processing,
+                    and Interaction research group. Within this group, VISLab is majorly concerned with research on
+                    human-computer
+                    interaction, emphasizing non-conventional, 3D interaction and haptics, and immersive visualization
+                    in the context of
+                    virtual and augmented reality applications. The lab's research focus is built on the assumption that
+                    human-computer
+                    communication should go beyond the eyes to include the touch and the auditory systems. This
+                    assumption implies using the
+                    most out of the computational resources available to enhance human activity with all helpful sensory
+                    (not only visual)
+                    information in harmony with our living environment while bearing in mind the human tasks the systems
+                    are entitled to
+                    support. Our goal touches several computational and human aspects covered by the projects in the
+                    different research
+                    lines conducted by the VISLab members.</p>
+
+            </mat-card-content>
+            <mat-card-actions >
+                <a mat-button class="link-button larger-text" color="primary" href="assets/papers/lab.pdf" target="_blank">Lab
+                    Presentation at SVR 2020</a>
+            </mat-card-actions>
+
+        </mat-card>
+        <div class="media" fxLayout="column" fxFlex="40" fxFlex.lt-md="100">
+            <iframe [src]="'https://www.youtube.com/embed/MlLCHy4d9IM' | safe" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="content"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="links" *ngIf="links$ | async as links; else loading">
+        <div fxLayout="row wrap" fxLayout.lt-md="column" fxFlex="100" fxLayoutWrap class="card-deck-container">
+            <div fxFlex *ngFor="let link of links" class="card-item">
+                <mat-card>
+                    <mat-card-content>
+                        <img mat-card-image src="assets/images/{{link.image}}" alt="{{link.title}}">
+                    </mat-card-content>
+                    <mat-card-actions fxLayoutAlign="center center">
+                        <a mat-button class="larger-text" color="primary" href="{{link.url}}" target="_blank">{{link.title}}</a>
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loading>
+    <div>Loading ...</div>
+</ng-template>

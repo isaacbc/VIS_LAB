@@ -1,0 +1,24 @@
+.card-deck-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 2px;
+  padding: 10px 10px 30px;
+  margin: 10px 10px 10px 10px;
+  
+}
+
+.project-filters-container {
+    position: relative;
+    text-align: center;
+}
+
+.card-item {
+  padding: 3px 3px 3px 3px;
+}
+
+h1 {
+    margin-top: 0.5rem;
+    font-size: 2.25rem;
+    line-height: 2rem;
+}

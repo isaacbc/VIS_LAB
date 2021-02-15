@@ -1,0 +1,44 @@
+<!--
+<div *ngIf="project$ | async as project;" fxLayout="column wrap" fxLayoutAlign="space-evenly center"
+    fxFlex="100">
+    <img src="assets/photos/{{project.images[0]}}">
+    <div fxLayout="column wrap" fxLayoutAlign="center left" fxFlex="50">
+        <h1>{{project.title}}</h1>
+        <h3>{{project.authors}}</h3>
+        <h2>Detalhes</h2>
+        <p>{{project.longDescription}}</p>
+    </div>
+</div>
+-->
+<div *ngIf="project$ | async as project;" class="container">
+    <div class="flex-container" fxLayout="row wrap" fxLayout.xs="column wrap" fxFlex="100">
+        <div class="flex-container" fxLayout="row wrap" fxLayout.xs="column wrap" fxFlex="50">
+            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+                <mat-tab *ngFor="let image of project.images;let i=index">
+                    <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon">photo</mat-icon>
+                        {{i+1}}
+                    </ng-template>
+                    <img src="assets/photos/{{image}}">
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <div class="flex-container" fxLayout="row wrap" fxLayout.xs="column wrap" fxFlex="50">
+            <div class="project-content">
+                <h1><b>{{project.title}}</b> <a mat-button class="link-button" color="primary" href="{{project.url}}" target="_blank">Link</a> </h1> 
+                <a><b>authors: </b>{{project.authors}}</a> <br>
+                <a><b>date: </b>{{project.date | date}}</a>
+                <h2>Details</h2>
+                <p>{{project.longDescription}}</p>
+
+                <mat-chip-list>
+                    <mat-chip *ngFor="let tag of project.tags">{{tag}}</mat-chip>
+                </mat-chip-list>
+
+                <button mat-button routerLink="/projects" class="back-button" >Back</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>

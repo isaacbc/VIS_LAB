@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+iframe.content {
+  height: 70%;
+}
+
 
 .media {
   margin-right: 16px;

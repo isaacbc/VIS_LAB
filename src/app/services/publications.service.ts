@@ -45,7 +45,7 @@ export class PublicationsService {
 
   filterPublicationsByTag(publications: Publication[], tag: string)
   {
-    if(tag === 'All' || !tag)
+    if (tag === 'All' || !tag)
     {
       return publications;
     }

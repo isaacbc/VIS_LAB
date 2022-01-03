@@ -40,7 +40,7 @@ export class MembersService {
     let list = [];
     for (let i = 0; i < members.length; i++)
     {
-      if (members[i]['degree'] != 'Professor' && members[i]['graduationDate'])
+      if (members[i]['degree'] !== 'Professor' && members[i]['graduationDate'])
       {
         list.push(members[i]);
       }

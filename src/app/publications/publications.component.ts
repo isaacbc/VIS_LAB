@@ -22,7 +22,8 @@ export class PublicationsComponent implements OnInit {
 
   getPublications()
   {
-    this.publicationsService.getPublications().subscribe(p => this.publications = this.publicationsService.filterPublicationsByTag(p, this.selectedTag));
+    this.publicationsService.getPublications().subscribe(
+      p => this.publications = this.publicationsService.filterPublicationsByTag(p, this.selectedTag));
   }
 
   onChangePage(pageOfPublications: Array<any>) {

@@ -20,6 +20,11 @@ export class ToolbarComponent implements OnInit
       routerLink: '/publications'
     },
     {
+      label: 'Projects',
+      icon: 'assignment',
+      routerLink: '/projects'
+    },
+    {
       label: 'Members',
       icon: 'people',
       routerLink: '/members'

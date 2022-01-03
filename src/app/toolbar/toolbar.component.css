@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.img-logo {
+  height: 100%;
+}
+
 .mat-toolbar-row, .mat-toolbar-single-row {
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35) !important;
   height: 100px;

@@ -2,7 +2,7 @@ export class Project
 {
     id: number;
     title: string;
-    date: Date;
+    date: string; // modificado para string para solucionar erros
     authors: string;
     url: string;
     description: string;

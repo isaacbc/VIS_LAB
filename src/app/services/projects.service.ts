@@ -8,19 +8,22 @@ import projects from '../../assets/data/projects.json';
   providedIn: 'root'
 })
 export class ProjectsService {
+  allProjects: Project[];
 
   constructor() { }
 
   getProjects(selectedTag: string): Observable<Project[]>
   {
-    let projects$;
-    if (selectedTag === '') {
-      projects$ = of(projects.projects);
+    const PROJECTS = projects.projects as Project[];
+    this.allProjects = PROJECTS;
+    if (selectedTag)
+    {
+      return of(this.filterProjectsByTag(PROJECTS, selectedTag));
     }
-    else {
-      projects$ = of(this.filterProjectsByTag(projects, selectedTag));
+    else
+    {
+      return of(PROJECTS);
     }
-    return projects$;
   }
 
   getProject(id: number): Observable<Project>

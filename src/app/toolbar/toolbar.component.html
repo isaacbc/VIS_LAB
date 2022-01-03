@@ -13,7 +13,7 @@
 
 
 <mat-toolbar class="toolbar" fxLayout="row" color="white">
-    <img class="logo" src="assets/images/inf-logo-2.0.svg" routerLink="/home" fxHide.xs>
+    <a class="logo" href="https://www.inf.ufrgs.br/site/"><img class="img-logo"  src="assets/images/inf-logo-2.0.svg"  fxHide.xs></a>
     <img class="logo" src="assets/images/logo2.png" routerLink="/home" alt="Visualization, Interaction and Simulation Lab">
     <span class="toolbar-spacer"></span>
     <button mat-button routerLinkActive="mat-accent" *ngFor="let item of menuItems" [routerLink]="item.routerLink" fxHide.lt-md>
